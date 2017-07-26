@@ -1,0 +1,59 @@
+body{
+	background-color: white;
+	background-image: url("weback.jpg");
+	color: white;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: fixed;
+	font-family: "Verdna", sans-serif;
+}
+
+#container{
+	background-color: grey;
+	padding: 8px;
+	border-radius:18px;
+	border: none;
+	margin: 10px;
+	text-align: center;
+	opacity: 0.9;
+	font-size:28px;
+	font-weight: 300;
+}
+
+#header{
+	text-align: center;
+	font-size: 32px;
+	opacity: 0.9;
+	font-weight: 900;
+}
+
+#subhead{
+	font-size: 30px;
+	font-weight: 500;
+}
+
+#relaycont{
+	display: inline-block;
+	text-align: center;
+	width: auto;
+	height: auto;
+	margin: 0;
+	margin-left: 55px;
+	margin-right: 55px;
+}
+
+.btn{
+	padding: 18px;
+	font-size: 25px;
+	border-radius: 14px;
+	background-color: blue;
+	color: white;
+	margin: 3px;
+	border: none;
+	font-weight: bold;
+}
+
+.btn:hover{
+	box-shadow: 0 0 8px white;
+}
