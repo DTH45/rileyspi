@@ -47,8 +47,8 @@
 					}
 			?>
 			<form method="post">
-				<button class="btn2" onclick="return confirm('Are you sure you want to restart the server?');" name="reboot">Restart Server</button>
-				<button class="btn2" onclick="return confirm('Are you sure you want to shutdown the server? It must be turned back on manually.');" name="shutdown">Shutdown Server</button><br>
+				<button class="btn2" onclick="return confirm('Are you sure you want to restart the server?');" name="reboot">Restart</button>
+				<button class="btn2" onclick="return confirm('Are you sure you want to shutdown the server? It must be booted manually.');" name="shutdown">Shutdown</button><br>
 			</form>
 		</div>
 
@@ -63,7 +63,7 @@
 				echo exec("sudo amixer sget PCM");
 				if (isset($_POST['volup']))
 					{
-						exec("sudo amixer sset PCM 15dB+");
+						exec("sudo amixer sset PCM 8dB+");
 						header("Location:index.php");
 					}
 				if (isset($_POST['volmt']))
@@ -73,7 +73,7 @@
 					}
 				if (isset($_POST['voldwn']))
 					{
-						exec("sudo amixer sset PCM 15dB-");
+						exec("sudo amixer sset PCM 8dB-");
 						header("Location:index.php");
 					}
 			?>
