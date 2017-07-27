@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Riley's Raspberry Pi 3</title>
+		<title>Pi Server Hub</title>
 		<link href="/style.css" rel="stylesheet"/>
 		<meta http-equiv="Pragma" content="no-cache">
 		<meta http-equiv="Expires" content="-1">
@@ -13,6 +13,14 @@
 	</head>
 
 	<body>
+		<div id="clock">
+			<div id="clockhd">
+				<?php
+					echo exec("date '+%A, %b %d, %Y - %I:%M %p'");
+				?>
+			</div>
+		</div>
+
 		<div id="container">
 			<div id="header">General Uptime Info:</div>
 			<?php
@@ -45,8 +53,14 @@
 					{
 						exec("sudo shutdown -h now");
 					}
+				if (isset($_POST['update']))
+					{
+						exec("sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo reboot");
+						header("Location:index.php");
+					}
 			?>
 			<form method="post">
+				<button class="btn2" onclick="return confirm('Are you sure you want to run server updates? The server will reboot unexpectedly when finished.');" name="update">Update</button>
 				<button class="btn2" onclick="return confirm('Are you sure you want to restart the server?');" name="reboot">Restart</button>
 				<button class="btn2" onclick="return confirm('Are you sure you want to shutdown the server? It must be booted manually.');" name="shutdown">Shutdown</button><br>
 			</form>
@@ -181,6 +195,17 @@
 					<button class="btn" name="6on">On</button>
 					<button class="btn" name="6off">Off</button>
 				</div>
+				<div id="relaycont">
+					<div id="subhead">Relay 7:</div>
+					<button class="btn" name="7on">On</button>
+					<button class="btn" name="7off">Off</button>
+				</div>
+				<div id="relaycont">
+					<div id="subhead">Relay 8:</div>
+					<button class="btn" name="8on">On</button>
+					<button class="btn" name="8off">Off</button>
+				</div>
+
 				<div id="relaycont">
 					<div id="subhead">All:</div>
 					<button class="btn2" onclick="return confirm('This sets all of the relays to their default positions (unpowered). Continue?');" name="reset">Reset</button>
