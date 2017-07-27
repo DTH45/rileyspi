@@ -43,7 +43,7 @@ body{
 	margin-right: 55px;
 }
 
-.btn{
+.btn,.btn2{
 	padding: 18px;
 	font-size: 25px;
 	border-radius: 14px;
@@ -54,6 +54,9 @@ body{
 	font-weight: bold;
 }
 
-.btn:hover{
+.btn2{
+	background-color: red;
+
+.btn:hover,btn2:hover{
 	box-shadow: 0 0 8px white;
 }
